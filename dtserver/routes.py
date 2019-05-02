@@ -7,7 +7,10 @@ from pytube import YouTube
 from textblob import TextBlob
 
 
-# upload video to dailymotion
+@app.route('/')
+def home():
+    return Response('working so far')
+
 
 # get all accounts
 @app.route('/api/gets_all_accounts', methods=['GET'])
