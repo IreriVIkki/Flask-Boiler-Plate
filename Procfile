@@ -1,2 +1,2 @@
-web: gunicorn app:app
-release: python app.py db upgrade
+web: gunicorn dtserver:app
+release: python app.py
