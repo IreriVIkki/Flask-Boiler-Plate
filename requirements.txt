@@ -19,7 +19,7 @@ marshmallow==2.19.2
 marshmallow-sqlalchemy==0.16.2
 nltk==3.4.1
 Pillow==6.0.0
-psycopg2==2.8.2
+psycopg2-binary==2.8.2
 pycodestyle==2.5.0
 pyparsing==2.4.0
 python-dateutil==2.8.0
