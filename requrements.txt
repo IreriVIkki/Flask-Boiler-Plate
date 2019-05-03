@@ -19,10 +19,12 @@ marshmallow==2.19.2
 marshmallow-sqlalchemy==0.16.2
 nltk==3.4.1
 Pillow==6.0.0
+psycopg2==2.8.2
 pycodestyle==2.5.0
 pyparsing==2.4.0
 python-dateutil==2.8.0
 python-editor==1.0.4
+pytube==9.4.0
 requests==2.21.0
 requests-toolbelt==0.9.1
 six==1.12.0

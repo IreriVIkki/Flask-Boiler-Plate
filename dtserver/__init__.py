@@ -12,7 +12,7 @@ app = Flask(__name__)
 CORS(app)
 
 # Database
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://vikki:sasawa@localhost:5432/dt'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://vikki:vikkisasawa@vikkiawsdatabase.ce3q2y9hmwwm.us-east-2.rds.amazonaws.com:5432/dailytube'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
 
 

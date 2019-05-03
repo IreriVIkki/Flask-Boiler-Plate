@@ -149,7 +149,7 @@ def get_account():
 def delete_account():
     account_id = int(request.args['account_id'])
     Account.query.filter_by(id=account_id).delete()
-    # db.session.commit()
+    db.session.commit()
     return jsonify({"success": True, "account": account_id})
 
 
@@ -158,6 +158,14 @@ def download_video():
     # Extract request data
     video_id = request.get_json()['videoId']
     video_title = request.get_json()['title']
+    old_file_path = request.get_json()['filePath']
+
+    # Delete previously uploaded video
+    try:
+        print(old_file_path)
+        os.remove(old_file_path)
+    except:
+        pass
 
     # Init
     video_url = f"https://www.youtube.com/watch?v={video_id}"
@@ -186,10 +194,6 @@ def download_video():
     except:
         video = Video.query.filter_by(video_id=video_id).delete()
         db.session.commit()
-        try:
-            os.remove(file_path)
-        except:
-            pass
         response = {"success": False, "message": "Download Error"}
 
     return jsonify(response)
