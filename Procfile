@@ -1,1 +1,1 @@
-web: gunicorn dtserver:app
+web: gunicorn app:app
