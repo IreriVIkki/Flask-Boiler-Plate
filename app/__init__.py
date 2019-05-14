@@ -3,7 +3,6 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_marshmallow import Marshmallow
 from flask_cors import CORS
 from flask_migrate import Migrate
-import dailymotion
 
 # Init app
 app = Flask(__name__)
@@ -12,12 +11,9 @@ app = Flask(__name__)
 CORS(app)
 
 # Database
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://vikki:vikkisasawa@vikkiawsdatabase.ce3q2y9hmwwm.us-east-2.rds.amazonaws.com:5432/dailytube'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://<db_user>:<db_username>@db_host:5432/db_name'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
 
-
-# Init Dailymotion
-daily_motion = dailymotion.Dailymotion()
 
 # Init db
 db = SQLAlchemy(app)
@@ -30,4 +26,4 @@ migrate = Migrate(app, db)
 
 # Import Routes after all is initialized
 if True:
-    from dtserver import routes
+    from app import routes
